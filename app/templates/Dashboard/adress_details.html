@@ -1,0 +1,47 @@
+{% extends "Dashboard/base.html" %}
+
+{% block content %}
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2><b>Address</b> <b>Details</b></h2></div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col m-1">
+            <button class="btn btn-danger"><a href="{% url 'Addresss_delete'  %}" class="delete" style="color:white;">Delete All</a></button>
+            </div>
+            <div class="col">
+               <a href="{% url 'Address_create' %}"><button class="btn btn-primary">Add New</button></a> 
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">Address Name</th>
+                      <th scope="col">Street Address</th>
+                      <th scope="col"> action</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+    {% for Address in company_Adress %}
+    <tr>
+        <td>{{ Address.user }}</td>
+        <td scope="row">{{ Address.street_address }}</td>
+        <td>
+              <a href="{% url 'Address_detail' Address.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+              <a href="{% url 'Address_update' Address.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+              <a href="{% url 'Address_delete' Address.pk %}" class="delete" title="delete" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+       </td>
+      </tr>
+    {% endfor %}
+              </tbody>
+          </table>
+          
+      </div>
+  </div>  
+</div>   
+{% endblock content %}

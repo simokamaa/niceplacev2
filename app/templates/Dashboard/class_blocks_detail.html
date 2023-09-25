@@ -1,0 +1,62 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2><b>Classes</b></h2></div>
+              </div>
+          </div>
+          <div class="row">
+            <!--Delete all button-->
+            <div class="col m-1">
+
+                <button type="submit" class="btn btn-danger"><a style="color:white;" href="{% url 'class_blocks_delete' %}">Delete all</a></button>
+
+            </div>
+            <!--Add new Product-->
+            <div class="col m-1">
+               <a href="{% url 'class_block_create' %}"> <button type="submit" class="btn btn-primary">Add class</button></a>
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Block</th>
+                      <th scope="col">Class Teacher</th>
+                      <th scope="col">Registration Date</th>
+                      <th scope="col"> Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for Class_block in  Class_blocks  %}
+                <tr>
+                  <th>{{ Class_block.class_name}}</th>
+                  <td scope="row">{{ Class_block.school_block }}</td>
+                  <td scope="col">{{ Class_block.class_teacher }}</td>
+                  <td scope="col">{{ Class_block.start_date }}</td>
+                  <td>
+                    <a href="{% url 'class_block_detail' Class_block.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+                    <a href="{% url 'class_block_update' Class_block.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+                    <a href="{% url 'class_block_delete' Class_block.pk %}" class="delete" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+             </td>
+                  <style>
+                    .lin{
+                      color : black;
+
+                    }
+                  </style>
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+{% endblock content %}

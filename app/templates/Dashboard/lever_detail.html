@@ -1,0 +1,64 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <h3 class="card-title text-center mt-3">{{ company_order.user }}</h3>
+          </div>
+         <div>
+          
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Product Name</th>
+                <td><b>{{ company_order.items }}</b></td>
+              </tr>
+              <tr>
+                <th>Product Price</th>
+                <td><b>{{ company_order.price}}</b></td>
+              </tr>
+              <tr>
+                <th>method</th>
+                <td>{{ company_order.method}}</td>
+              </tr>
+              <tr>
+                <th>package</th>
+                <td>{{ company_order.package}}</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td><small>{{ company_order.start_date }}</small></td>
+              </tr>
+              <tr>
+                <th>payment</th>
+                <td><b>{{ company_order.payment }}</b></td>
+              </tr>
+              <tr>
+                <th>Ordered</th>
+                <td>{{ company_order.ordered }}</td>
+              </tr>
+              <tr>
+                <th>shipping address</th>
+                <td>{{ company_order.shipping_address }}</td>
+              </tr>
+              <tr>
+                <th>billing address</th>
+                <td>{{ company_order.billing_address }}</td>
+              </tr>
+
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

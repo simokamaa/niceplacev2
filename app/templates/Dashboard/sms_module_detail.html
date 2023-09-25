@@ -1,0 +1,44 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <h3 class="card-title text-center mt-3">{{ company_sms_module.name }}</h3>
+          </div>
+         <div>
+          
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <td><b>{{ company_sms_module.name }}</b></td>
+              </tr>
+              <tr>
+                <th>API key</th>
+                <td><b>{{ company_sms_module.api_key}}</b></td>
+              </tr>
+              <tr>
+                <th>Product Category</th>
+                <td><small>{{ company_sms_module.client }}</small></td>
+              </tr>
+              <tr>
+                <th>discount_price</th>
+                <td><b>{{ company_sms_module.start_date}}</b></td>
+              </tr>
+              
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

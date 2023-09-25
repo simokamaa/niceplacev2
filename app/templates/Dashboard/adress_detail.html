@@ -1,0 +1,56 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <img src="{% static 'img/profile-img.jpg'   %}" class="img-fluid rounded-circle" alt="Profile Image" style="width: 150px; height: 150px;">
+          </div>
+         <div>
+          
+          <h3 class="card-title text-center mt-3">{{ company_Address.user}}</h3>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Street Address</th>
+                <td><b>{{ company_Address.street_address }}</b></td>
+              </tr>
+              <tr>
+                <th>apartment address</th>
+                <td><b>{{ company_Address.apartment_address }}</b></td>
+              </tr>
+              <tr>
+                <th>country</th>
+                <td><small>{{ company_Address.country }}</small></td>
+              </tr>
+              <tr>
+                <th>zip </th>
+                <td><b>{{ company_Address.zip }}</b></td>
+              </tr>
+              <tr>
+                <th>contact</th>
+                <td>{{ company_Address.contact }}</td>
+              </tr>
+              <tr>
+                <th>address type</th>
+                <td>{{ company_Address.address_type }}</td>
+              </tr>
+              <tr>
+                <th>default</th>
+                <td>{{ company_Address.default }}</td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

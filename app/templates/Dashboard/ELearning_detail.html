@@ -1,0 +1,57 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <img src="{% static 'img/profile-img.jpg'   %}" class="img-fluid rounded-circle" alt="Profile Image" style="width: 150px; height: 150px;">
+          </div>
+         <div>
+          
+          <h3 class="card-title text-center mt-3">{{ eLearning.title }}</h3>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Title of course</th>
+                <td><b>{{ eLearning.title}}</b></td>
+              </tr>
+              <tr>
+                <th>Date posted</th>
+                <td><b>{{ eLearning.date_posted }}</b></td>
+              </tr>
+              <tr>
+                <th>Posted by</th>
+                <td><small>{{ eLearning.posted_by }}</small></td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td><b>{{ eLearning.date }}</b></td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <th>Time</th>
+                <td>{{ eLearning.time }}</td>
+              </tr>
+              <tr>
+                <th>link</th>
+                <td>{{ eLearning.link }}</td>
+              </tr>
+
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

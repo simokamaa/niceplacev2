@@ -1,0 +1,51 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="col">
+  <h2> Campaign Details</h2>
+<div class="row">
+  <div class="col m-1">
+    <form method="POST" action="">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger" value="submit">Delete All</button>
+    </form>
+  </div>
+  <div class="col m-1">
+    <a href="{% url 'campaign_create' %}"><button class="btn btn-primary">Add new</button></a>
+  </div>
+</div>
+ </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Phone Contact</th>
+          <th scope="col">status</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        
+        {% for company_campaign in company_campaigns %}
+        <tr>
+          <th scope="row">{{ company_campaign.name }}</th>
+          <td>{{ company_campaign.phone_contact }}</td>
+          <td>{{ company_campaign.status }}</td>
+          <td>{{ company_campaign.date }}</td>
+          <td>
+            <a href="" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+            <a href="" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+            <a href="" class="delete" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+     </td>
+        </tr>
+   
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+
+<!-- Left side columns -->
+{% endblock content %}

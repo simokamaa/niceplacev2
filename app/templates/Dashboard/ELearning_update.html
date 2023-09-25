@@ -1,0 +1,11 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<h5>Updating Course {{ eLearning.title }}</h5>
+  <form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-primary">Update</button>
+  </form>
+{% endblock content %}

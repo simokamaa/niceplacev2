@@ -1,0 +1,53 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="col">
+  <h2>Packages Details</h2>
+<div class="row">
+  <div class="col m-1">
+    <form method="POST" action="">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger" value="submit">Delete All</button>
+    </form>
+  </div>
+  <div class="col m-1">
+    <a href="{% url 'package_create' %}"><button class="btn btn-primary">Add new</button></a>
+  </div>
+</div>
+ </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        
+{% for company_package in company_packages %}
+<tr>
+  <th scope="row">{{ company_package.id }}</th>
+  <td>{{ company_package.name }}</td>
+  <td>{{ company_package.price }}</td>
+  <td>{{company_package.duration}}</td>
+  <td>{{company_package.description}}</td>
+  <td>
+    <a href="{% url 'package_detail' company_package.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+    <a href="{% url 'package_update' company_package.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+    <a href="{% url 'package_delete' company_package.pk %}" class="delete" title="delete" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+</td>
+</tr>
+{% endfor %}
+   
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- Left side columns -->
+{% endblock content %}

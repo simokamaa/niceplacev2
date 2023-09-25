@@ -1,0 +1,56 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <h3 class="card-title text-center mt-3">{{ fee.student }}</h3>
+          </div>
+         <div>
+          
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Student Name</th>
+                <td><b>{{ fee.student }}</b></td>
+              </tr>
+              <tr>
+                <th>Amount</th>
+                <td><b>{{ fee.amount }}</b></td>
+              </tr>
+              <tr>
+                <th>description</th>
+                <td><small>{{ fee.description }}</small></td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td><b>{{ fee.due_date }}</b></td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>{{ fee.paid }}</td>
+              </tr>
+              <tr>
+                <th>Payment Date</th>
+                <td>{{ fee.payment_date }}</td>
+              </tr>
+              <tr>
+                <th>Payment Method</th>
+                <td>{{ fee.payment_method }}</td>
+              </tr>
+          
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

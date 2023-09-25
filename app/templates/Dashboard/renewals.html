@@ -1,0 +1,37 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center">
+    <img src="{% static 'img/logo.png' %}" alt="Company Logo" class="logo">
+    <h2>Stylush Hair and Beauty college</h2>
+  </div>
+ <div class="row">
+    <table class="table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Employement ID: </th>
+            <th>username</th>
+            <th>Salary Type</th>
+            <th>pdf</th>
+        </tr>
+        </thead>
+         <tbody>
+            {% for employee in employees %}
+          <tr>
+            <th scope="row">{{ employee.Employement_id }}</th>
+            <td>{{ employee.username }}</td>
+            <td>{{ employee.salary_type }}</td>
+            <td><a href="{% url 'generate_payslip' employee.pk %}"><button class="btn btn-success m-2 p-2">payslip</button></a></td>
+          </tr>
+            {% endfor %}
+         </tbody>
+    </table>
+    <!-- Add other fields and their corresponding values -->
+ </div>
+  <!-- Add more payslip details and formatting as needed -->
+</div>
+
+{% endblock content %}

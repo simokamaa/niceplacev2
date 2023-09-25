@@ -1,0 +1,42 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+  
+<div class="col-lg-8">
+  <div class="row">
+<form method="POST" action="makePaymentList">
+
+<div class="card mb-3">
+<div class="card-body">
+<h3 class="card-title">Select Department and Month</h3>
+
+<div class="form-group">
+  <label for="id_department">Select Department<span class="text-danger">*</span>:</label>
+  <select class="form-control" id="id_department" name="department">
+    <option value="">Select department...</option>
+    <option value="dept1">Department 1</option>
+    <option value="dept2">Department 2</option>
+    <option value="dept3">Department 3</option>
+    <!-- Add more options as needed -->
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="id_month">Select Month<span class="text-danger">*</span>:</label>
+  <select class="form-control" id="id_month" name="month">
+    <option value="">Select month...</option>
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <!-- Add more options as needed -->
+  </select>
+</div>
+
+<button type="submit" class="btn btn-primary">Go</button>
+</div>
+</div>
+
+</form>
+</div> 
+{% endblock content %}

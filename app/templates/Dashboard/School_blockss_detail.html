@@ -1,0 +1,58 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2><b>COHORTS</b></h2></div>
+              </div>
+          </div>
+          <div class="row">
+            <!--Delete all button-->
+            <div class="col m-1">
+
+                <button type="submit" class="btn btn-danger"><a style="color:white;" href="{% url 'School_blockss_delete' %}">Delete all</a></button>
+
+            </div>
+            <!--Add new Product-->
+            <div class="col m-1">
+               <a href="{% url 'School_blocks_create' %}"> <button type="submit" class="btn btn-primary">Add School_blocks</button></a>
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Date</th>
+                      <th scope="col"> Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for school_blocks in  school_blockss  %}
+                <tr>
+                  <th>{{ school_blocks.name}}</th>
+                  <td scope="row">{{ school_blocks.start_date }}</td>
+                  <td>
+                    <a href="{% url 'School_blocks_detail' school_blocks.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+                    <a href="{% url 'School_blocks_update' school_blocks.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+                    <a href="{% url 'School_blocks_delete' school_blocks.pk %}" class="delete" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+             </td>
+                  <style>
+                    .lin{
+                      color : black;
+
+                    }
+                  </style>
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+{% endblock content %}

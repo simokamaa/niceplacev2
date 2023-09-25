@@ -1,0 +1,34 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="mb-3">
+  <label for="employment_id" class="form-label">Employee salary list</label>
+ 
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">EMP ID</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Salary Type</th>
+          <th scope="col">Basic Salary</th>
+          <th scope="col">Overtime </th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>monthly</td>
+          <td>Kshs 0.00</td>
+          <td>0</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- Left side columns -->
+
+{% endblock content %}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html>
+
+<head>
+    <title>Payslip</title>
+ <!--  Main CSS File -->
+<!-- Favicons -->
+<link href="{% static 'img/favicon.png'  %}" rel="icon">
+<link href="{% static 'img/apple-touch-icon.png'   %}" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/quill/quill.snow.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+<!--  Main CSS File -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+</head>
+ <!-- Favicons -->
+ <style>
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    img {
+        margin-right: 100px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    table {
+        border-collapse: collapse;
+      }
+
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+
+      th {
+        background-color: gray;
+      }
+
+      /* Remove border for first column */
+      td:first-child {
+        border-left: none;
+      }
+
+      /* Add border for last column */
+      td:last-child {
+        border-right: none;
+      }
+    </style>
+<body>
+    <div class="container mt-5 ">
+        <div class="row ">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 text-center intro mb-4">
+                        <h1 class="mt-3 companyname">{{ company_name }}</h1>
+                        <h2><b>13908-00100 GPO Nairobi</b></h2>
+                        <h1 class="" style="margin: 5px;"><b>PAYSLIP</b></h1>
+                        <div class="center">
+                            <img src="{{ company_logo }}" class=""  width="200" height="200" alt="Company Logo">
+                        </div>
+                    </div>
+                </div>
+                <!-- Rest of the code... -->
+            </div>
+
+        </div>
+        <style>
+          .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+
+          .column {
+              margin: 10px;
+          }
+
+          .row {
+              margin-bottom: 10px;
+          }
+
+          .text-center {
+              text-align: center;
+          }
+      </style>
+
+      <div class="container mt-5">
+          <div class="column">
+              <div class="row">
+                  <h1 class="text-center">Staff Name: {{ employee.first_name }} {{ employee.middle_name }} {{ employee.last_name }}</h1>
+              </div>
+              <div class="row">
+                  <p class="text-center">Staff Department : {{ employee.department }}</p>
+                   </div>
+              <div class="row">
+                  <p class="text-center">Staff ID: {{ employee.Employement_id }}</p>
+              </div>
+          </div>
+          <div class="column">
+              <div class="row">
+                  <p class="text-center">Email: {{ employee.Email }}</p>
+              </div>
+              <div class="row">
+                  <p class="text-center">Date of Generation: {{generation_date}}</p>
+              </div>
+          </div>
+      </div>
+
+              <div class="column">
+                  <table>
+                      <thead>
+                          <tr>
+                              <th><h1>Earnings</h1></th>
+                              <th><h1>Amount</h1></th>
+                              <th><h1>Deduction</h1></th>
+                              <th><h1>Amount</h1></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td><p>Basic Pay</p></td>
+                              <td><p>Kshs {{ employee.total_income }}</p></td>
+                              <td><p>Advance salary</p></td>
+                              <td><p class="text-center">Kshs {{advance_salary}}</p></td>
+                          </tr>
+                          <!-- Add more rows as needed -->
+                          <tr>
+                              <td><p>Allowances</p></td>
+                              <td><p>Kshs {{allowance}}</p></td>
+                              <td><p>Debit</p></td>
+                              <td><p class="text-center">Kshs {{debit}}</p></td>
+                          </tr>
+
+                      </tbody>
+                  </table>
+                   <div class="row">
+                       <div class="col">
+                           <b><h1>Net Income : Kshs {{ employee.total_income }}</h1></b>
+                       </div>
+                   </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+<div class="d-flex flex-row" style="display:flex; bottom:0;">
+
+<div class="column text-start">
+<p class="text-end">__________________________</p>
+<p class="text-end">stamp</p>
+</div>
+
+<div class="column">
+    <p>_____________________</p>
+    <p>signature</p>
+</div>
+</div>
+<style>
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    padding:1px;
+}
+</style>
+
+
+      <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/apexcharts/apexcharts.min.js'  %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'  %}"></script>
+  <script src="{% static 'vendor/chart.js/chart.min.js' %}"></script>
+  <script src="{% static 'vendor/echarts/echarts.min.js'  %}"></script>
+  <script src="{% static 'vendor/quill/quill.min.js'  %}"></script>
+  <script src="{% static 'vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static  'vendor/tinymce/tinymce.min.js'  %}"></script>
+  <script src="{% static  'vendor/php-email-form/validate.js'   %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{%  static  'js/main.js'  %}"></script>
+
+</body>
+</html>

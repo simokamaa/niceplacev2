@@ -1,0 +1,8 @@
+{% load bootstrap5 %}
+{% extends "Dashboard/base.html" %}
+
+{% for system_information in system_informations  %}
+  <p>{{ system_information.company_name }}</p>
+  <p>{{ system_information.company_logo.url }}</p>
+{% endfor %}
+

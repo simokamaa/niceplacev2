@@ -1,0 +1,12 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div>
+    <form method="POST">
+      {%csrf_token%}
+      {% bootstrap_form form%}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+{% endblock content %}

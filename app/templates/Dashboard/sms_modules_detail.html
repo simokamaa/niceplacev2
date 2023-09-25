@@ -1,0 +1,53 @@
+{% extends "Dashboard/base.html" %}
+
+{% block content %}
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2><b>SMS module</b> <b>Details</b></h2></div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col m-1">
+            </div>
+            <div class="col">
+               <a href="{% url 'sms_module_create' %}"><button class="btn btn-primary m-1">Add New</button></a> 
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">api client</th>
+                      <th scope="col">Api key</th>
+                      <th scope="date">Date</th>
+                      <th scope="col"> action</th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+    {% for company_sms_module in company_sms_modules %}
+                <tr>
+                  <td>{{ company_sms_module.name }}</td>
+                  <th scope="row">{{ company_sms_module.api_client }}</th>
+                  <th scope="row">{{ company_sms_module.api_key }}</th>
+                  <th scope="row">{{ company_sms_module.start_date }}</th>
+                  <td>
+                        <a href="{% url 'sms_module_detail' company_sms_module.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+                        <a href="{% url 'sms_module_update' company_sms_module.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+                        <a href="{% url 'sms_module_delete' company_sms_module.pk %}" class="delete" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+                 </td>
+                </tr>
+        {% endfor %}
+                
+                
+                 
+              </tbody>
+          </table>
+          
+      </div>
+  </div>  
+</div>   
+{% endblock content %}

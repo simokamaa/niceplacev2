@@ -1,0 +1,44 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <h3 class="card-title text-center mt-3">{{ Class_block.class_name }}</h3>
+          </div>
+         <div>
+          
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Class Name</th>
+                <td><b>{{ Class_block.class_name }}</b></td>
+              </tr>
+              <tr>
+                <th>School Block</th>
+                <td><b>{{ Class_block.school_block }}</b></td>
+              </tr>
+              <tr>
+                <th>Class Teacher</th>
+                <td><b>{{ Class_block.class_teacher }}</b></td>
+              </tr>
+              <tr>
+                <th>Start Date</th>
+                <td><small>{{ Class_block.last_name }}</small></td>
+              </tr>
+              
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

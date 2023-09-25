@@ -1,0 +1,60 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <img src="{% static 'img/profile-img.jpg'   %}" class="img-fluid rounded-circle" alt="Profile Image" style="width: 150px; height: 150px;">
+          </div>
+         <div>
+          
+          <h3 class="card-title text-center mt-3">{{ staff.first_name }} {{ staff.last_name }}</h3>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>First Name</th>
+                <td><b>{{ staff.first_name }}</b></td>
+              </tr>
+              <tr>
+                <th>Middle Name</th>
+                <td><b>{{ staff.middle_name }}</b></td>
+              </tr>
+              <tr>
+                <th>Last Name</th>
+                <td><small>{{ staff.last_name }}</small></td>
+              </tr>
+              <tr>
+                <th>username</th>
+                <td><b>{{ staff.username }}</b></td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <th>contact</th>
+                <td>{{ staff.contact }}</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td>{{ staff.Email }}</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td>{{ staff.registration_date }}</td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

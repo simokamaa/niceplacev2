@@ -1,0 +1,19 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Create new exam</h3>
+
+    <form method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button class="btn btn-primary " type="submit">Save</button>
+    </form>
+
+    
+  </div>
+</div>
+
+{% endblock content %}

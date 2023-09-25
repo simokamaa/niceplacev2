@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>title</title>
+         <!-- Favicons -->
+  <link href="{% static 'img/favicon.png'  %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png'   %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!--  Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+  <body>
+     <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+  <div class="row">
+    <div class="col">
+        <div class="d-flex align-items-center justify-content-between ">
+            <a href="{%  url 'index'  %}" class="logo d-flex align-items-center">
+              <img src="{% static 'img/logo.png'  %}" alt="">
+              <span class="d-none d-lg-block">HR & payroll</span>
+            </a>
+          </div><!-- End Logo -->
+    </div>
+    <div class="col">
+      <div class="col">
+        <h1><b><i>Documentation</i></b></h1>
+      </div>
+      
+    </div>
+    <div class="col">
+      <b><small>Version 1.9</small> Beta version: release 07/08/2023</b>
+    </div>
+  </div>
+    </header>
+
+    <!--body section-->
+    <div class="body m-5">
+        <p class="m-5">welcome to HR $ payroll system</p>
+
+        <div class="col">
+          <ol>
+            <b>System requirements:</b>
+            <li>Python 3.11.1</li>
+            <li>Django 4.2.1</li>
+            <li>Pillow 9.5.0</li>
+            <li>Ecma Script 2021</li>
+            <li>Bootstrap 5.3.0</li>
+            <li>TinyMce 6.2.1</li>
+            <li>Reportlab 4.0.0</li>
+            <li>Beutifulsoap 4.12.2</li>
+            <li>django_require_login 1.1.2</li>
+            <li>django_user_login 0.3.4</li>
+            <li>beautifulsoap4 4.12.2</li>
+            <li>fpdf</li>
+            <li>SQL Lite</li>
+            <li>Virtualenv 20.23.9</li>
+            <li>Python Supportive Server</li>
+          </ol>
+      </div>
+
+        <!--login-->
+        <div class="col">
+            <b class="center row">LOGIN PAGE</b>
+            <p class="row text-blue">The System automatically redirects to login page.The login credentials are supposed to be arquired from Admin.</p>
+            <img src="{% static 'documentation/login.png'  %}"  class="img-fluid row"  alt="">
+            <br/>
+        </div>
+
+        <div class="col">
+            <b class="row center">System Configuration</b>
+            <p>Navigate to the right upper corner of the Dashboard as indicated below.Check the drop down menu and click on settings</p>
+            <img src="{% static 'documentation/settings.png'  %}"  class="img-fluid row"  alt="">
+        </div>
+
+        <div class="col">
+            <b class="row center">Profile Settings</b>
+            <p>Navigate to upper right corner and click on  Admin Profile,check on drop down and  Click or tap on Account Settings.Configure As Per Your Details.More functionalities will appear in coming version</p>
+            <img src="{% static 'documentation/settingsa.png'  %}"  class="img-fluid row"  alt="">
+        </div>
+
+        <div class="col">
+            <b class="row center">Profile View</b>
+            <p>Navigate to upper right corner and click on  Admin Profile,check on drop down and click on profile.</p>
+            <img src="{% static 'documentation/profile.png'  %}"  class="img-fluid row"  alt="">
+        </div>
+
+        <div class="col">
+          <b class="row center">Profile View</b>
+          <p>Navigate to view profile alt2 navigate sidebar and click on profile.</p>
+          <img src="{% static 'documentation/profile2.png'  %}"  class="img-fluid row"  alt="">
+      </div>
+
+         <div class="col">
+            <b class="row center">Sign out</b>
+            <p>Navigate to upper right corner and click on  Admin Profile,check on drop down and click on sign out.</p>
+            <img src="{% static 'documentation/signout.png'  %}"  class="img-fluid row"  alt="">
+        </div>
+
+        <div class="col">
+          <b class="row text-center ">System usage</b>
+          <p>To kick start the system functionality everything starts at Adding department first.</p>
+          <p>Other functionalities entirely are based on department since to add an employee or job department is a key requirement.</p>
+          <p>To add Department head on to <b>sidebar</b> and navigate to <b>Department</b>  click to <b>Add Department in the Drop down menu</b></p>
+          <img src="{% static 'documentation/adddepartment.png'  %}"  class="img-fluid row"  alt="">
+      </div>
+
+      <div class="col">
+        <b class="row center">Job Types</b>
+        <p>Then Add diffrents kind of jobs.Navigate to sidebar,click on payroll then select commission templates.</p>
+        <img src="{% static 'documentation/jobtypes.png'  %}"  class="img-fluid row"  alt="">
+    </div>
+
+    <div class="col">
+      <b class="row center">Add Employee</b>
+      <p>This should be third task consecutively.To add an employee navigate to sidebar then on <b>Employees</b>, under drop down click on <b>Add Employee</b></p>
+      <img src="{% static 'documentation/addemployee.png'  %}"  class="img-fluid row"  alt="">
+  </div>
+
+  
+  <div class="col">
+    <b class="row center">Daily Task</b>
+    <p>Navigate to upper right side of the dashboard.Click to message like icon.A drop down will appear.Click on <b>Add Daily Task</b></p>
+    <img src="{% static 'documentation/dailytask.png'  %}"  class="img-fluid row"  alt="">
+</div>
+
+    </div>
+   <!--end of body section-->
+ 
+
+<div class="col">
+  <b>version 1.1</b>
+  <ul>
+    <li>Initial set up of the system</li>
+    <li>adding employee functionality</li>
+    <li>report show functionalitty</li>
+    <li>adding department functionality</li>
+  </ul>
+  <br/>
+</div>
+
+<div class="col">
+<b>version 1.2</b>
+<ul>
+  <li>improved adding employee functionality by adding back,front and back id image</li>
+  <li>added id attribute to the department functionality</li>
+  <li>added login page functionality</li>
+  <li>added automatic redirect to the login page</li>
+  <li>added expenses functionality</li>
+  <li>added job type addition functionality</li>
+  <li>added login library</li>
+  <li>fixed all known bugs</li>
+</ul>
+<br/>
+</div>
+
+<div class="col">
+<b>version 1.3</b>
+<ul>
+<li>added logo functionality</li>
+<li>added daily task functionality</li>
+<li>added generate payslip functionality</li>
+<li>added admin profile functionality</li>
+<li>Added profile picture functionality</li>
+<li>added manage salary functionality</li>
+<li>added notification capabilities</li>
+</ul>
+<br/>
+</div>
+
+<div class="col">
+<b>version 1.4</b>
+<ul>
+<li>added monthly and yearly reports</li>
+<li>added balance sheet reports</li>
+<li>added employee award</li>
+<li>added overtime capabilities</li>
+<li>added advance saraly functionalities</li>
+<li>fixed the add employee bug</li>
+<li>fixed the login challanges</li>
+<li>fixed other minor bugs</li>
+</ul>
+<br/>
+</div>
+
+<div class="col">
+<b>version 1.5</b>
+<ul>
+<li>added generate payslip functionality</li>
+<li>improved login system</li>
+<li>added advance salary functionality</li>
+<li>added payroll summary capabilities</li>
+<li>added employee salary list functionality</li>
+<li>improved add job type by adding job type id</li>
+<li>improved adding daily task functionality by allighing its models</li>
+<li>fixed all known bugs</li>
+</ul>
+<br/>
+</div>
+
+<div class="col">
+  <b>version 1.6</b>
+  <ul>
+   <li>Admin profile improved functionality by fetching from models</li>
+   <li>added settings functionality</li>
+   <li>fixed the add department bug</li>
+   <li>fixed all known major bugs</li>
+  </ul>
+  <br/>
+</div>
+
+<div class="col">
+  <b>version 1.7</b>
+  <ul>
+   <li>Added next of kin module</li>
+   <li>added advance salary report module</li>
+   <li>added balance sheet view module from daily report</li>
+   <li>added next of kin module report</li>
+   <li>advanced employee registration module</li>
+   <li>Fixed all known bugs</li>
+  </ul>
+  <br/>
+</div>
+
+<div class="col">
+  <b>version 1.8</b>
+  <ul>
+   <li>Improved Login System</li>
+   <li>added Financial account settings module</li>
+   <li>added profile delete capabilities</li>
+   <li>added Daily expenses report module</li>
+   <li>Fixed auto redirect to default page</li>
+   <li>Added Delete financial account feature</li>
+   <li>Added dynamic capabilities to system Dashboard</li>
+   <li>Fixed all known bugs</li>
+  </ul>
+  <br/>
+</div>
+
+<div class="col">
+  <b>version 1.9  release date 07/08/2023</b>
+  <ul>
+    <li>Data Storage Fixed</li>
+  <li>Added capability of maintaining System Data for upto 10 years</li>
+   <li>Added Full Functionality of settings modules</li>
+   <li>Added Manage Department functionality</li>
+   <li>Added auto_date_ add to related components</li>
+   <li>Fixed all known bugs</li>
+  </ul>
+  <br/>
+</div>
+<div class="col">
+  <b>version 2.0</b>
+  <ul>
+<li>sync Pictures with S3 Amazon Bucket</li>
+<li>Full Display of Acounting Report</li>
+<li>fix payslips pdf load with Print Api</li>
+<li>Fix Any Other Relevant Bug</li>
+  </ul>
+  <br/>
+</div>
+
+<div class="col">
+  <b>version 2.1</b>
+  <ul>
+   <li>Added Debit module</li>
+   <li>Capability to delete individual components</li>
+   <li>Capability to  view the individual components</li>
+   <li>Capability for auto month reset</li>
+  </ul>
+  <br/>
+</div>
+
+<div class="col">
+  <h3>Upcoming</h3>
+  <b>version 2.2</b>
+  <ul>
+   <li>Spreadshit and excel API</li>
+   <li>wordprocessing software API</li>
+   <li>Google Docs API</li>
+   <li>Auto backup of daily data </li>
+   <li>Sync whole Accounting Module With Data Science libralies</li>
+   <li>Full Data Analysis Capability including graphs</li>
+   <li>Full Documentation Delivery</li>
+  </ul>
+  <br/>
+</div>
+<!--notes and developer contact details-->
+<b><i>Note :</i> This is user manual.It is not comprehensive,i have only covered the nessesary basics.Technical manual is on www.github.com/simokamaa/payroll
+ <br/>Developer's contact : +254114241129 or simonkamau690@gmail.com
+<hr/>HR & Payroll Sytem</b>
+<!--end of developer contact details-->
+    <!--footer-->
+    <div>
+        <!-- ----------------------------------------------------------------------------------------   -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>HR $ payroll system</span></strong>. All Rights Reserved
+    </div>
+   
+  </footer><!-- End Footer -->
+    </div>
+    <!--end of footer-->
+
+    <!--scripts tag-->
+    <div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="{% static 'vendor/apexcharts/apexcharts.min.js'  %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'  %}"></script>
+        <script src="{% static 'vendor/chart.js/chart.min.js' %}"></script>
+        <script src="{% static 'vendor/echarts/echarts.min.js'  %}"></script>
+        <script src="{% static 'vendor/quill/quill.min.js'  %}"></script>
+        <script src="{% static 'vendor/simple-datatables/simple-datatables.js' %}"></script>
+        <script src="{% static  'vendor/tinymce/tinymce.min.js'  %}"></script>
+        <script src="{% static  'vendor/php-email-form/validate.js'   %}"></script>
+      
+        <!-- Template Main JS File -->
+        <script src="{%  static  'js/main.js'  %}"></script>
+    </div>
+    <!--end of script tags-->
+  </body>
+</html>

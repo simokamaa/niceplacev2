@@ -1,0 +1,54 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="m-4 ftable">
+  <table class="table ftable" id="ftable">
+<thead>
+  <tr>
+    <th scope="col">Date</th>
+    <th scope="col">Cash</th>
+    <th scope="col">Mpesa</th>
+    <th scope="col">Total company income</th>
+    <th scope="col">Employees commissions</th>
+    <th scope="col">Net income</th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr>
+    <th scope="row">{{0}}</th>
+    <td>Kshs {{0}}</td>
+    <td>Kshs {{0}}</td>
+    <td>Kshs {{0}}</td>
+    <td>Kshs {{0}}</td>
+    <td>Kshs {{0}}</td>
+  </tr>
+
+</tbody>
+<tfoot>
+  <tr>
+    <th scope="row">{{time}}</th>
+    <td>Kshs {{mpesa_income}}</td>
+    <td>Kshs {{cash_income}}</td>
+    <td>Kshs {{all_amount}}</td>
+    <td>Kshs {{total_company_income}}</td>
+    <td>Kshs {{net_income}}</td>
+  </tr>
+</tfoot>
+</table>
+</div>
+
+<style>
+  .ftable{
+      margin:50px;
+      padding:5px;
+      top: 150px;
+  }
+</style>
+<!-- --------------------------------------------------------------------------------    -->
+
+                                         END SIDE BAR
+
+
+{% endblock content %}

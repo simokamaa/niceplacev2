@@ -1,0 +1,53 @@
+{% extends "Dashboard/base.html" %}
+{% load static %}
+
+{% block content %}
+ <!--second one-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <h3 class="card-title text-center mt-3">{{ company_package.first_name }}</h3>
+          </div>
+         <div>
+          
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>ID</th>
+                <td><b>{{ company_package.id }}</b></td>
+              </tr>
+              <tr>
+                <th>Plan Name</th>
+                <td><b>{{ company_package.name }}</b></td>
+              </tr>
+              <tr>
+                <th>Plan Price</th>
+                <td><small>{{ company_package.price }}</small></td>
+              </tr>
+              <tr>
+                <th>Plan Duration</th>
+                <td><b>{{ company_package.duration }}</b></td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>Active</td>
+              </tr>
+
+              <tr>
+                <th>Plan Description</th>
+                <td>{{ company_package.descrption }}</td>
+              </tr>
+            </tbody>
+          </table>
+    
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

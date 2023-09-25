@@ -1,0 +1,18 @@
+{% extends "Dashboard/base.html" %}
+
+{% block content %}
+     <!-- Left side columns -->
+
+     <div class="container">
+      <h1>Delete Employee</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="employment_id" class="form-label">Employment ID</label>
+          <input type="number" class="form-control" id="employment_id" name="employment_id" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="container">
+  <h1>Create a new Package</h1>
+
+
+  <form method="POST" action="">
+    {% csrf_token %}
+    {% bootstrap_form form  %}
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

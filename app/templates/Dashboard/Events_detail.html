@@ -1,0 +1,57 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2><b>Events</b> <b>Details</b></h2></div>
+              </div>
+          </div>
+          <div class="row">
+            <!--Delete all button-->
+            <div class="col m-1">
+
+                <button type="submit" class="btn btn-danger"><a style="color:white;" href="{% url 'Events_delete' %}">Delete all</a></button>
+
+            </div>
+            <!--Add new Product-->
+            <div class="col m-1">
+               <a href="{% url 'Event_create' %}"> <button type="submit" class="btn btn-primary">Add event</button></a>
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">Title</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Location</th>
+                      <th scope="col"> Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for event in  events  %}
+                <tr>
+                  <th>{{ event.title}}</th>
+                  <td scope="row">{{ event.description }}</td>
+                  <td scope="col">{{ event.date }}</td>
+                  <td scope="col">{{ event.location }}</td>
+                  <td>
+                    <a href="{% url 'Event_detail' event.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+                    <a href="{% url 'Event_update' event.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+                    <a href="{% url 'Event_delete' event.pk %}" class="delete" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+             </td>
+
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+{% endblock content %}

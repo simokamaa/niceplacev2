@@ -1,0 +1,55 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="mb-3">
+  <h4>Order details</h4>
+
+  <div class="row">
+    <div class="col m-1">
+    <button class="btn btn-danger"><a href="{% url 'orders_delete'  %}" class="delete" style="color:white;">Delete All</a></button>
+    </div>
+    <div class="col">
+       <a href="{% url 'order_create' %}"><button class="btn btn-primary">Add New</button></a> 
+    </div>
+  </div>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">client</th>
+          <th scope="col">Product</th>
+          <th scope="col">Payments</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+
+          {% for company_order in company_orders%}
+          <tr>
+          <th scope="row">{{ company_order.id }}</th>
+          <td>{{ company_order.user }}</td>
+          <td>{{ company_order.items }}</td>
+          <td>{{ company_order.payment }}</td>
+          <td>{{ company_order.start_date }}</td>
+          <td>
+        
+              <a href="{% url 'order_detail' company_order.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+              <a href="{% url 'order_update' company_order.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+              <a href="{% url 'order_delete' company_order.pk %}" class="delete" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+       
+
+          </td>
+        </tr>
+            {% endfor  %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- Left side columns -->
+
+
+{% endblock content %}
