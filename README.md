@@ -1,6 +1,8 @@
 # niceplacev2
  niceplacev2
- ![Uploading image.png…]()
+ ![image](https://github.com/simokamaa/niceplacev2/assets/88234407/406e6c72-3925-4cc1-a457-7d51072c0f42)
+ 
+
 
 
 Nice place foundation  system
@@ -11,6 +13,6 @@ Nice place foundation  system
  <li>create a new branch</li>
  <li>Make the necessary changes and commit</li>
  <li>Raise a Pull request in the main repo</li>
- <li>Make sure to properly comment your code</li>
+ <li>Make sure to properly comment your code.</li>
 </ul>
 
