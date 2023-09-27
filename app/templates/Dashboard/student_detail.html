@@ -9,44 +9,109 @@
       <div class="card">
         <div class="card-body">
           <div class="text-center">
-            <img src="{% static 'img/profile-img.jpg'   %}" class="img-fluid rounded-circle" alt="Profile Image" style="width: 150px; height: 150px;">
+            <img src="{{ student.student_photo.url }}" class="img-fluid rounded-circle" alt="Profile Image" style="width: 150px; height: 150px;">
           </div>
          <div>
           
-          <h3 class="card-title text-center mt-3">{{ teacher.first_name }} {{ teacher.last_name }}</h3>
+          <h3 class="card-title text-center mt-3">{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</h3>
           <table class="table">
             <tbody>
               <tr>
                 <th>First Name</th>
-                <td><b>{{ teacher.first_name }}</b></td>
+                <td><b>{{ student.first_name }}</b></td>
               </tr>
               <tr>
                 <th>Middle Name</th>
-                <td><b>{{ teacher.middle_name }}</b></td>
+                <td><b>{{ student.middle_name }}</b></td>
               </tr>
               <tr>
                 <th>Last Name</th>
-                <td><small>{{ teacher.last_name }}</small></td>
+                <td><small>{{ student.last_name }}</small></td>
               </tr>
               <tr>
-                <th>username</th>
-                <td><b>{{ teacher.username }}</b></td>
+                <th>Admission Number</th>
+                <td><b>{{ student.admission_number }}</b></td>
               </tr>
               <tr>
                 <th>Status</th>
-                <td>Active</td>
+                <td>{{ student.status }}</td>
               </tr>
               <tr>
-                <th>contact</th>
-                <td>{{ teacher.contact }}</td>
+                <th>Date of Admission</th>
+                <td>{{ student.date_of_admission}}</td>
               </tr>
               <tr>
-                <th>Email</th>
-                <td>{{ teacher.Email }}</td>
+                <th>Date Of Birth</th>
+                <td>{{ student.date_of_birth }}</td>
               </tr>
               <tr>
-                <th>Email</th>
-                <td>{{ teacher.registration_date }}</td>
+                <th>cohort</th>
+                <td>{{ student.cohort }}</td>
+              </tr>
+              <th>Type</th>
+              <td>{{ student.Type }}</td>
+            </tr>
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--another part-->
+ <div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Primary School</th>
+                <td><b>{{ student.primary_school }}</b></td>
+              </tr>
+              <tr>
+                <th>High School</th>
+                <td><b>{{ student.high_school }}</b></td>
+              </tr>
+              <tr>
+                <th>Tertialy School</th>
+                <td><small>{{ student.tertialy_school }}</small></td>
+              </tr>
+              <tr>
+                <th>lever</th>
+                <td><b>{{ student.lever }}</b></td>
+              </tr>
+              <tr>
+                <th>Scholarship npf</th>
+                <td>{{ student.scholarship_npf }}</td>
+              </tr>
+              <tr>
+                <th>Scholarship other</th>
+                <td>{{ student.scholarship_other}}</td>
+              </tr>
+              <tr>
+                <th>shelter</th>
+                <td>{{ student.shelter }}</td>
+              </tr>
+              <tr>
+                <th>ward</th>
+                <td>{{ student.ward }}</td>
+              </tr>
+              <tr>
+                <th>county</th>
+                <td>{{ student.county}}</td>
+              </tr>
+              <tr>
+                <th>duration</th>
+                <td>{{ student.duration }}</td>
+              </tr>
+              <tr>
+                <th>home village</th>
+                <td>{{ student.home_village }}</td>
               </tr>
             </tbody>
           </table>
@@ -56,5 +121,46 @@
     </div>
   </div>
 </div>
+<!--end of this part-->
+
+<!--another part-->
+<div class="container ">
+  <div class="col">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Gurdian First Name</th>
+                <td><b>{{ student.guardian_first_name }}</b></td>
+              </tr>
+              <tr>
+                <th>Guardian Middle Name</th>
+                <td><b>{{ student.guardian_middle_name }}</b></td>
+              </tr>
+              <tr>
+                <th>Guardian Last Name</th>
+                <td><small>{{ student.guardian_last_name }}</small></td>
+              </tr>
+              <tr>
+                <th>Guardian Phone Number</th>
+                <td><b>{{ student.guardian_phone_number }}</b></td>
+              </tr>
+              <tr>
+                <th>Guardian Relationship</th>
+                <td>{{ student.guardian_relationship }}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of this part-->
 
 {% endblock content %}

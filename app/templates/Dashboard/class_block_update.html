@@ -2,7 +2,7 @@
 {% load bootstrap5 %}
 
 {% block content %}
-<h5>Updating a Class block {{ Class_block.name }}</h5>
+<h5>Updating  {{ Class_block.class_name }} class</h5>
   <form method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}

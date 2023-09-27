@@ -25,16 +25,20 @@
           <table class="table table-striped table-hover table-bordered">
               <thead>
                   <tr>
-                      <th scope="col">Name</th>
+                      <th scope="col">Exam name</th>
+                      <th scope="col">subject</th>
                       <th scope="col">Date</th>
+                      <th scope="col">Exam Date</th>
                       <th scope="col"> Action</th>
                   </tr>
               </thead>
               <tbody>
                 {% for exam in  exams  %}
                 <tr>
+                  <th>{{ exam.exam_name}}</th>
                   <th>{{ exam.name}}</th>
                   <td scope="row">{{ exam.date }}</td>
+                  <td scope="row">{{ exam.exam_date }}</td>
                   <td>
                     <a href="{% url 'exam_detail' exam.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
                     <a href="{% url 'exam_update' exam.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>

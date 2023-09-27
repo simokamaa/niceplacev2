@@ -19,24 +19,28 @@
             </div>
             <!--Add new Product-->
             <div class="col m-1">
-               <a href="{% url 'student_create' %}"> <button type="submit" class="btn btn-primary">Add student</button></a>
+               <a href="{% url 'student_create' %}"> <button type="submit" class="btn btn-primary">+ student</button></a>
             </div>
           </div>
           <table class="table table-striped table-hover table-bordered">
               <thead>
                   <tr>
-                      <th scope="col">First Name</th>
+                      <th scope="col">ADM</th>
                       <th scope="col">Date</th>
-                      <th scope="col">Last Name</th>
-                      <th scope="col"> Action</th>
+                      <th scope="col">Names</th>
+                      <th scope="col">cohort</th>
+                      <th scope="col">status </th>
+                      <th scope="col">Action</th>
                   </tr>
               </thead>
               <tbody>
                 {% for student in  students  %}
                 <tr>
-                  <th>{{ student.first_name}}</th>
-                  <td scope="row">{{ student.start_date }}</td>
-                  <td scope="col">{{ student.last_name }}</td>
+                  <th>{{ student.admission_number}}</th>
+                  <td scope="row">{{ student.date_of_admission }}</td>
+                  <td scope="col">{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</td>
+                  <td scope="col">{{ student.cohort }}</td>
+                  <td scope="col">{{ student.status  }}</td>
                   <td>
                     <a href="{% url 'student_detail' student.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
                     <a href="{% url 'student_update' student.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>

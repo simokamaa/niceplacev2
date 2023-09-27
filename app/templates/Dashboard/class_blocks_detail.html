@@ -26,7 +26,7 @@
               <thead>
                   <tr>
                       <th scope="col">Name</th>
-                      <th scope="col">Block</th>
+                      <th scope="col">Cohort</th>
                       <th scope="col">Class Teacher</th>
                       <th scope="col">Registration Date</th>
                       <th scope="col"> Action</th>
@@ -36,7 +36,7 @@
                 {% for Class_block in  Class_blocks  %}
                 <tr>
                   <th>{{ Class_block.class_name}}</th>
-                  <td scope="row">{{ Class_block.school_block }}</td>
+                  <td scope="row">{{ Class_block.cohort }}</td>
                   <td scope="col">{{ Class_block.class_teacher }}</td>
                   <td scope="col">{{ Class_block.start_date }}</td>
                   <td>
