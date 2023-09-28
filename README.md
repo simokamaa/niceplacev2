@@ -1,6 +1,7 @@
 # niceplacev2
  niceplacev2
- ![image](https://github.com/simokamaa/niceplacev2/assets/88234407/406e6c72-3925-4cc1-a457-7d51072c0f42)
+![image](https://github.com/simokamaa/niceplacev2/assets/88234407/f7b40115-4218-4446-859d-16fb52daa0b1)
+
  
 
 
